@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title><%= title %></title>
+  <title>Chuck Norris Jokes</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -12,28 +12,29 @@
 
   <div class="jumbotron" style="text-align: center;">
     <h1 class="display-4">Chuck Norris Jokes</h1>
-    <hr class="my-4">
+    <img src="https://assets.chucknorris.host/img/avatar/chuck-norris.png" alt="">
   </div>
-  <section style="text-align: center;">
-
-
-      <form action="" method="POST" style="text-align: left;">
+  <section style="text-align: center; padding: 0 30%;">
+    <form action="/" method="POST" style="text-align: left;">
       <p class="lead">Choose category:</p>
-      
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-          <label class="form-check-label" for="exampleRadios1">
-            Default radio
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-          <label class="form-check-label" for="exampleRadios2">
-            Second default radio
-          </label>
-        </div>
-      </form>
-
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="category" value="random" checked>
+        <label class="form-check-label">random</label>
+      </div>
+      <% categories.forEach(function(c){ %>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="category" value="<%= c %>">
+        <label class="form-check-label"><%= c %></label>
+      </div>
+      <% }) %>
+      <button type="submit" class="btn btn-primary mb-2" style="margin-top: 5%;">Get Chuck Norries Joke</button>
+    </form>
+  </section>
+  <section style="text-align: center; padding: 0 20%;">
+    <div style="text-align: left;">
+      <h6><%= joke.category %></h6>
+      <p><strong><%= joke.j %></strong></p>
+    </div>
   </section>
 </body>
 
