@@ -32,12 +32,3 @@ router.post('/', function (req, res, next) {
 
 
 module.exports = router;
-
-
-
-// { "categories": [], 
-// "created_at": "2016-05-01 10:51:41.584544", 
-// "icon_url": "https://assets.chucknorris.host/img/avatar/chuck-norris.png", 
-// "id": "ufs7OGMYSaijieW--a3BKQ", "updated_at": "2016-05-01 10:51:41.584544", 
-// "url": "https://api.chucknorris.io/jokes/ufs7OGMYSaijieW--a3BKQ", 
-// "value": "Chuck Norris CAN handle the truth." }
